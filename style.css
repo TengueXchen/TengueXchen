@@ -1,0 +1,140 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0f1115;
+  --panel: #181c24;
+  --panel-soft: #1f2430;
+  --text: #f4f6fb;
+  --muted: #a0a7b8;
+  --accent: #5ee3c8;
+  --accent-2: #6ea8ff;
+  --danger: #ff5e7d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: radial-gradient(circle at top, #17202a 0%, #0c0f14 45%, #080a0f 100%);
+  color: var(--text);
+}
+
+.app-header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+}
+
+.app-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.app-header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.app {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 0 1.5rem 2.5rem;
+}
+
+.panel {
+  background: linear-gradient(160deg, var(--panel) 0%, var(--panel-soft) 100%);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 24px 40px rgba(0, 0, 0, 0.25);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--danger);
+  box-shadow: 0 0 12px rgba(255, 94, 125, 0.65);
+}
+
+.status-dot.active {
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(94, 227, 200, 0.65);
+}
+
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  box-shadow: none;
+}
+
+button.primary {
+  background: linear-gradient(130deg, var(--accent) 0%, var(--accent-2) 100%);
+  color: #0a0f14;
+  box-shadow: 0 12px 20px rgba(110, 168, 255, 0.35);
+}
+
+button.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text);
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.slider-group {
+  display: grid;
+  gap: 1rem;
+}
+
+.slider-group label {
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+.tips h2 {
+  margin-top: 0;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 700px) {
+  .controls {
+    flex-direction: column;
+  }
+}

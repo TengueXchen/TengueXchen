@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>我的專屬變聲器</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>我的專屬變聲器</h1>
+    <p>一鍵將男聲調成柔和女聲，簡單直覺。</p>
+  </header>
+
+  <main class="app">
+    <section class="panel">
+      <div class="status">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">尚未啟動麥克風</span>
+      </div>
+
+      <div class="controls">
+        <button id="startButton" class="primary">啟動女聲</button>
+        <button id="stopButton" class="ghost" disabled>停止</button>
+      </div>
+
+      <div class="slider-group">
+        <label>
+          女聲程度
+          <input type="range" id="feminity" min="0" max="1" step="0.01" value="0.65" />
+        </label>
+        <label>
+          亮度
+          <input type="range" id="brightness" min="1200" max="6000" value="3200" />
+        </label>
+        <label>
+          輸出音量
+          <input type="range" id="volume" min="0" max="1" step="0.01" value="0.85" />
+        </label>
+      </div>
+    </section>
+
+    <section class="panel tips">
+      <h2>使用小提示</h2>
+      <ul>
+        <li>建議搭配耳機使用，避免回授。</li>
+        <li>「女聲程度」越高，低頻會被削弱並強化中高頻。</li>
+        <li>如覺得過亮，稍微降低「亮度」。</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <small>本工具完全在瀏覽器端執行，音訊不會上傳伺服器。</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
